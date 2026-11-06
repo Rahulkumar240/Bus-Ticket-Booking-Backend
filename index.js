@@ -1,7 +1,7 @@
 const express = require('express');
 const connectDB = require('./database/db');
 const app = express();
-
+const data = require('./data/rawfigures');
 const dns = require('dns');
 
 dns.setServers(['8.8.8.8',
@@ -17,6 +17,13 @@ app.listen(PORT,() => {
     console.log(`Server is running on port ${PORT}`)
 })
 
-app.get('/bookings', data.json())
+app.get('/',(req,res) => {
+    res.status(200).json({message: "Server is running"})
+})
 
+
+
+app.get('/user',(req,res)=>{
+    res.status(200).json()
+})
 connectDB();
