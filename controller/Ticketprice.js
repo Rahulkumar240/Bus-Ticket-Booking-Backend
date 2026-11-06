@@ -22,3 +22,5 @@ const CalculateTicketPrice = (req,res) => {
         return res.status(200).json({ price });
     }
 )};
+
+module.exports = { calculateTicketPrice };
